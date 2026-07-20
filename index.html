@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Treat - Online Food Ordering</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+<nav>
+    <div class="logo">Tasty Treat
+        <span id="welcomeUser"></span>
+    </div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="orders.html">Order History</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+         <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Welcome to Tasty Treat</h1>
+    <p>Fresh & Delicious Food Delivered Anytime, Anywhere</p>
+    <a href="#menu">
+    <button>Order Now</button>
+</a>
+</section>
+<!-- Search Section -->
+<section class="search-section">
+
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="Search Food..."
+        onkeyup="searchFood()">
+
+</section>
+<!-- Food Categories -->
+
+<section class="category">
+
+    <button onclick="filterFood('all')">All</button>
+
+    <button onclick="filterFood('burger')">burger</button>
+
+    <button onclick="filterFood('pizza')">pizza</button>
+
+    <button onclick="filterFood('Veg-Momos')">Veg-Momos</button>
+
+
+    <button onclick="filterFood('paneer')">paneer</button>
+
+    <button onclick="filterFood('veg biryani')">veg biryani</button>
+
+
+</section>
+
+    <!-- Header -->
+    <header>
+        <h1>TASTY TREAT</h1>
+        <p>Order Delisious Food Anytime, Anywhere</p>
+    </header>
+
+    <!-- Food Section -->
+    <section class="food-container" id="menu">
+
+        <div class="food-card" data-category="burger">
+            <img src="images/burger.jpg"
+            onclick="openPopup('Burger',120,'images/burger.jpg','Fresh Veg Burger with Cheese')">
+            <h2>burger</h2>
+            <p>Price: ₹120</p>
+            <p>⭐⭐⭐⭐☆ (4.6)</p>
+            <button onclick="addToCart('burger',120)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+         <div class="food-card" data-category="burger">
+            <img src="images/burger2.jpg"
+            onclick="openPopup('Cheese Burger',220,'images/burger2.jpg','Cheesy Burger')">
+            <h2>Cheese Burger</h2>
+            <p>Price: ₹220</p>
+            <p>⭐⭐⭐⭐☆ (4.6)</p>
+            <button onclick="addToCart('burger2',220)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+         <div class="food-card" data-category="burger">
+            <img src="images/burger3.jpg"
+            onclick="openPopup('Double Burger',420,'images/burger3.jpg','Double Patty Burger')">
+            <h2>Double Burger</h2>
+            <p>Price: ₹420</p>
+            <p>⭐⭐⭐⭐☆ (4.6)</p>
+            <button onclick="addToCart('burger3',420)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+
+        <div class="food-card" data-category="pizza">
+            <img src="images/pizza.jpg"
+onclick="openPopup('Pizza',199,'images/pizza.jpg','Delicious Cheese Pizza loaded with fresh vegetables and mozzarella cheese.')">
+            <h2>Pizza</h2>
+            <p>Price: ₹199</p>
+            <p>⭐⭐⭐⭐⭐ (5.0)</p>
+            <button onclick="addToCart('Pizza',199)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+
+        <div class="food-card" data-category="paneer">
+            <img src="images/paneer roll.jpg"
+onclick="openPopup('Paneer Roll',150,'images/paneer roll.jpg','Soft roll stuffed with spicy paneer, fresh vegetables and tasty sauces.')">
+            <h2>paneer roll</h2>
+            <p>Price: ₹150</p>
+            <p>⭐⭐⭐⭐ (4.2)</p>
+            <button onclick="addToCart('paneer roll',150)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+
+        <div class="food-card" data-category="paneer">
+            <img src="images/paneer tikka.jpg"
+onclick="openPopup('Paneer Tikka',300,'images/paneer tikka.jpg','Grilled paneer cubes marinated with Indian spices and served hot.')">
+            <h2>paneer tikka</h2>
+            <p>Price: ₹300</p>
+            <p>⭐⭐⭐⭐☆ (4.5)</p>
+            <button onclick="addToCart('paneer tikka',300)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="paneer">
+            <img src="images/paneer.jpg"
+onclick="openPopup('Paneer',200,'images/paneer.jpg','Fresh paneer cooked in rich Indian spices with creamy gravy.')">
+            <h2>paneer</h2>
+            <p>Price: ₹200</p>
+            <p>⭐⭐⭐⭐☆ (4.5)</p>
+            <button onclick="addToCart('paneer',200)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="paneer">
+            <img src="images/paneer.jpg"
+onclick="openPopup('Paneer',200,'images/paneer.jpg','Fresh paneer cooked in rich Indian spices with creamy gravy.')">
+            <h2>paneer</h2>
+            <p>Price: ₹200</p>
+            <p>⭐⭐⭐⭐ (4.2)</p>
+            <button onclick="addToCart('paneer',200)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="paneer">
+            <img src="images/shahipaneer.jpg"
+onclick="openPopup('Shahi Paneer',600,'images/shahipaneer.jpg','Premium shahi paneer cooked in rich creamy gravy with special spices.')">
+            <h2>paneer</h2>
+            <p>Price: ₹600</p>
+            <p>⭐⭐⭐⭐ (4.4)</p>
+            <button onclick="addToCart('shahipaneer',600)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="paneer">
+            <img src="images/shahipaneer2.jpg"
+onclick="openPopup('Shahi Paneer Special',500,'images/shahipaneer2.jpg','Special creamy shahi paneer served with delicious Indian flavors.')">
+            <h2>paneer</h2>
+            <p>Price: ₹500</p>
+            <p>⭐⭐⭐⭐ (4.2)</p>
+            <button onclick="addToCart('shahipaneer2',500)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="pizza">
+            <img src="images/pizza2.jpg"
+onclick="openPopup('Pizza 2',299,'images/pizza2.jpg','Large cheese pizza with extra toppings and crispy crust.')">
+            <h2>pizza2</h2>
+            <p>Price: ₹299</p>
+            <p>⭐⭐⭐⭐ (4.2)</p>
+            <button onclick="addToCart('pizza2',299)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="pizza">
+            <img src="images/pizza3.jpg"
+onclick="openPopup('Pizza 3',200,'images/pizza3.jpg','Classic pizza with fresh vegetables and cheese.')">
+            <h2>pizza3</h2>
+            <p>Price: ₹200</p>
+            <p>⭐⭐⭐⭐ (4.2)</p>
+            <button onclick="addToCart('pizza3',200)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="Veg-Momos">
+            <img src="images/Veg-Momos.jpg"
+onclick="openPopup('Veg Momos',250,'images/Veg-Momos.jpg','Steamed veg momos served with spicy red chutney and mayonnaise.')">
+            <h2>Veg-momos</h2>
+            <p>Price: ₹250</p>
+            <p>⭐⭐⭐⭐⭐ (5.0)</p>
+            <button onclick="addToCart('Veg-momos',250)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+        <div class="food-card" data-category="veg biryani">
+            <img src="images/veg biryani.jpg"
+onclick="openPopup('Veg Biryani',650,'images/veg biryani.jpg','Aromatic basmati rice cooked with fresh vegetables and Indian spices.')">
+            <h2>veg biryani</h2>
+            <p>Price: ₹650</p>
+            <p>⭐⭐⭐⭐⭐ (4.6)</p>
+            <button onclick="addToCart('veg biryani',650)">Add to Cart</button>
+            <button onclick="favoriteFood()">❤️ Favorite</button>
+        </div>
+
+
+    </section>
+
+    <!-- Cart -->
+    <section class="cart">
+
+        <h2>🛒 Your Cart</h2>
+
+        <ul id="cartItems">
+
+        </ul>
+
+        <h3>Total: ₹<span id="total">0</span></h3>
+
+       
+
+    </section>
+    <!-- Checkout Form -->
+
+<section class="checkout">
+
+    <h2>Checkout</h2>
+
+    <input type="text" id="customerName" placeholder="Enter Your Name">
+
+    <input type="text" id="mobile" placeholder="Mobile Number">
+
+    <textarea id="address" placeholder="Enter Delivery Address"></textarea>
+
+    <select id="payment">
+
+        <option>Cash on Delivery</option>
+
+        <option>UPI</option>
+
+        <option>Credit Card</option>
+
+    </select>
+
+    <button onclick="placeOrder()">
+        Confirm Order
+    </button>
+    <button onclick="clearCart()">Clear Cart</button>
+
+</section>
+<section id="about" class="about">
+
+<h2>About Us</h2>
+
+<p>
+
+Tasty Treat is an online food ordering website developed using HTML, CSS and JavaScript.
+
+Our aim is to deliver fresh and delicious food to customers quickly and safely.
+
+</p>
+
+</section>
+<section id="contact" class="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍 Gorakhpur, Uttar Pradesh</p>
+
+<p>📞 +91 9797979797</p>
+
+<p>📧 tastytreat@gmail.com</p>
+</section>
+
+
+<footer>
+
+<p>
+
+© 2026 Tasty Treat| Designed by Khushi Chaudhary
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+<div id="popup" class="popup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">&times;</span>
+
+        <img id="popupImage" src="" width="250">
+
+        <h2 id="popupTitle"></h2>
+
+        <p id="popupPrice"></p>
+
+        <p id="popupDescription"></p>
+
+        <button onclick="addPopupToCart()">Add to Cart</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
